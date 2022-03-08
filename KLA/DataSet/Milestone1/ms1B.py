@@ -82,11 +82,11 @@ def concurrent_flow(activities, parent):
             print(datetime.now(), end=';')
             print(f'{parent}.{key} Exit')
 
-    # for t in threads:
-    #     if t.is_alive():
-    #         t.join()
-    #     else:
-    #         threads.remove(t)
+    for t in threads:
+        if t.is_alive():
+            t.join()
+        else:
+            threads.remove(t)
     flag = 1
     while flag == 1:
         flag = 0
